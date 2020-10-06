@@ -1,6 +1,6 @@
-﻿namespace Circustrein
+﻿namespace Circustrein.UI
 {
-    partial class Window
+    partial class TrainLayoutUI
     {
         /// <summary>
         /// Required designer variable.
@@ -28,20 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // Window
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "Window";
-            this.Text = "Form1";
-            this.ResumeLayout(false);
-
+            this.Text = "TrainLayout";
         }
 
         #endregion
     }
 }
-
