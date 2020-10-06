@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Circustrein
+namespace Circustrein.UI
 {
-    public partial class Window : Form
+    public partial class TrainLayoutUI : Form
     {
-        public Window()
+        public TrainLayoutUI()
         {
             InitializeComponent();
         }

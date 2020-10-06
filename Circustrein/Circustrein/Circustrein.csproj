@@ -47,17 +47,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Logic\Animal.cs" />
+    <Compile Include="Logic\Train.cs" />
     <Compile Include="Logic\Wagon.cs" />
-    <Compile Include="UI\CircusTrainUi.cs">
+    <Compile Include="UI\AddAnimalUi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\CircusTrainUi.Designer.cs">
-      <DependentUpon>CircusTrainUi.cs</DependentUpon>
+    <Compile Include="UI\AddAnimalUi.Designer.cs">
+      <DependentUpon>AddAnimalUi.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="UI\CircusTrainUi.resx">
-      <DependentUpon>CircusTrainUi.cs</DependentUpon>
+    <Compile Include="UI\TrainLayoutUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TrainLayoutUI.Designer.cs">
+      <DependentUpon>TrainLayoutUI.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UI\AddAnimalUi.resx">
+      <DependentUpon>AddAnimalUi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
