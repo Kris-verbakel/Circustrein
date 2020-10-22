@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Logic\Algorithm.cs" />
     <Compile Include="Logic\Animal.cs" />
     <Compile Include="Logic\Train.cs" />
     <Compile Include="Logic\Wagon.cs" />

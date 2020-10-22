@@ -6,13 +6,7 @@ using System.Threading.Tasks;
 
 namespace Circustrein.Logic
 {
-    class Train
+    class Algorithm
     {
-        List<Wagon> wagons = new List<Wagon>(); 
-    }
-
-    public void AddWagon(Wagon wagon)
-    {
-        wagons.Add(wagon); 
     }
 }
