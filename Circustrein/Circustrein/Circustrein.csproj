@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Logic\Animal.cs" />
+    <Compile Include="Logic\Enum.cs" />
     <Compile Include="Logic\Train.cs" />
     <Compile Include="Logic\Wagon.cs" />
     <Compile Include="UI\AddAnimalUi.cs">

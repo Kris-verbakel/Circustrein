@@ -6,52 +6,63 @@ using System.Threading.Tasks;
 
 namespace Circustrein.Logic
 {
-    class Wagon
+    public class Wagon
     {
-        private int sizePoints = 10;
-        List<Animal> animals = new List<Animal>(); 
-        
-        public Wagon()
-        {
+        public int Capacity { get; private set; }
+        private List<Animal> animals = new List<Animal>();
 
+        public Wagon ()
+        {
+            Capacity = 10; 
         }
 
-        public bool AddAnimal(Animal animal)
+        public void AddAnimal(Animal animal)
+        { 
+                animals.Add(animal);                
+        }
+
+        public bool CheckFit(Animal animal)
         {
-            string animalSize = animal.Size; 
-            switch(animalSize)
+            if (CheckCapacity(animal) && CheckSafe(animal) && CheckWagonSafe(animal))
             {
-                case "big":
-                    if (sizePoints >= 5)
-                    {
-                        animals.Add(animal);
-                        sizePoints-=5;
-                        return true; 
-                    }
-                    else { return false; };
-                    
-
-                case "medium":
-                    if (sizePoints >= 3)
-                    {
-                        animals.Add(animal);
-                        sizePoints -= 3;
-                        return true; 
-                    }
-                    else { return false; };
-
-                case "smal":
-                    if (sizePoints >= 1)
-                    {
-                        animals.Add(animal);
-                        sizePoints -= 1;
-                        return true; 
-                    }
-                    else { return false; };
+                return true;
             }
-            return false;  
+            return false;            
         }
 
-        
+        private bool CheckCapacity(Animal animal)
+        {
+            return (int)animal.Size <= Capacity; 
+        }
+
+        private bool CheckSafe(Animal animal)
+        {
+            foreach (Animal an in animals)
+            {
+                if(an.Size >= animal.Size)
+                {
+                    if (an.Food == Food.carnivore)
+                    {
+                        return false;
+                    }        
+                }
+            }
+            return true; 
+        }
+
+        private bool CheckWagonSafe(Animal animal)
+        {
+            if (animal.Food == Food.carnivore)
+            {
+                foreach (Animal an in animals)
+                {
+                    if (an.Size <= animal.Size)
+                    {
+                        return false; 
+                    }
+                }
+            }
+            return true;  
+        }
     }
 }
