@@ -16,12 +16,17 @@ namespace Circustrein.Logic
             Capacity = 10; 
         }
 
-        public void AddAnimal(Animal animal)
-        { 
-                animals.Add(animal);                
+        public bool AddAnimal(Animal animal)
+        {
+            if(CheckFit(animal))
+            {
+                animals.Add(animal);
+                return true; 
+            }
+            return false; 
         }
 
-        public bool CheckFit(Animal animal)
+        private bool CheckFit(Animal animal)
         {
             if (CheckCapacity(animal) && CheckSafe(animal) && CheckWagonSafe(animal))
             {

@@ -9,25 +9,24 @@ namespace Circustrein.Logic
     class Train
     {
         public List<Wagon> wagons = new List<Wagon>();
-        int count = 0; 
+
         public Train()
         {
             wagons.Add(new Wagon()); 
         }
-        private void newAnimal(Animal animal)
-        {
-            if (wagons[count].CheckFit(animal))
-            {
-                wagons[count].AddAnimal(animal);
-            }
 
-            else
+        public bool AddNewAnimal(Animal animal)
+        {
+            foreach(Wagon w in wagons)
             {
-                wagons.Add(new Wagon());
-                count++;
-                wagons[count].AddAnimal(animal);
+                if(w.AddAnimal(animal))
+                {
+                    return true; 
+                }
             }
+            return false; 
         }
+            
 
     }
 }
