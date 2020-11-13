@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Circustrein.Logic
 {
-    class Train
+    public class Train
     {
         public List<Wagon> wagons = new List<Wagon>();
 
@@ -19,7 +19,7 @@ namespace Circustrein.Logic
         {
             foreach(Wagon w in wagons)
             {
-                if(w.AddAnimal(animal))
+                if (w.AddAnimal(animal))
                 {
                     return true; 
                 }
