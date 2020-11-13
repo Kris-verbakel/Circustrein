@@ -37,7 +37,12 @@ namespace Circustrein.Logic
 
         private bool CheckCapacity(Animal animal)
         {
-            return (int)animal.Size <= Capacity; 
+            if((int)animal.Size <= Capacity)
+            {
+                Capacity = Capacity - (int)animal.Size; 
+                return true; 
+            }
+            return false; 
         }
 
         private bool CheckSafe(Animal animal)
